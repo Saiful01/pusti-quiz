@@ -1,0 +1,193 @@
+@import url('/font/HindSiliguri-Bold.ttf');
+
+body{
+
+    font-family: 'Hind Siliguri', sans-serif !important;
+}
+
+#quiz input {
+    width: 400px;
+}
+
+
+/* Styling for the selected answer */
+.selected-answer {
+    background: darkred;
+    color: white;
+}
+.Custom_Cancel {
+    font-size: 10px;
+}
+
+/* Styles for desktop screens (e.g., screens wider than 768px) */
+@media (min-width: 769px) {
+    .desktop-background {
+        background: url('../img/1st.png') center;
+        height: 166px;
+    }
+    .desktop-background1 {
+        background: url('../img/Artboard 8.png') center;
+        height: 700px;
+        margin-top: -10px;
+    }
+    .desktop-background2 {
+        background: url('../img/Artboard 9.png') center;
+        height: 326px;
+        margin-top: -50px;
+
+
+    }
+    .desktop-background3 {
+        background: url('../img/certificate/Artboard 11.png') center;
+        background-size: cover;
+        height: 900px;
+
+
+    }
+    .quiz {
+        color: white !important;
+        margin-top: -20px;
+        padding-bottom: 150px;
+
+    }
+    .quiz input{
+        margin-top: 10px !important;
+    }
+
+    input::placeholder {
+        font-size: 14px !important;
+    }
+    .header-text{
+        padding-top: 50px;
+    }
+    .quiz-header {
+        font-size: 15px;
+
+    }
+    /* Styling for all answers */
+    .red-text {
+        width: 400px;
+        background: white;
+        color: darkred;
+        border: 2px solid darkred;
+        margin-top: 5px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    /* Styling for the selected answer */
+    .selected-answer {
+        background: darkred;
+        color: white;
+    }
+    .btn-default {
+        width: 150px;
+        background: white;
+        color: black;
+        font-size: 14px;
+    }
+    .btn-default:hover {
+        width: 150px;
+        background: darkgreen;
+        color: red;
+    }
+    .c-name {
+        margin-top: 500px;
+        margin-left: 500px;
+        color: white;
+
+    }
+    .mobile {
+        display: none;
+    }
+    .desktop {
+        display: block;
+    }
+}
+
+/* Styles for mobile screens (e.g., screens 768px or narrower) */
+@media (max-width: 768px) {
+    .mobile-background {
+        background: url('../img/1st.png') center;
+        background-size: cover;
+        height:120px;
+    }
+    .mobile-background1 {
+        background: url('../img/Artboard 8.png') center;
+        background-size: cover;
+        height:450px;
+        margin-top: -5px;
+    }
+    .mobile-background2 {
+        background: url('../img/Artboard 9.png') center;
+        background-size: cover;
+        height: 200px;
+        margin-top: 0px;
+
+    }
+    .mobile-background3 {
+        background: url('../img/certificate/Artboard 11.png') center;
+        background-size: cover;
+        height: 230px;
+        margin-top: 0px;
+
+    }
+    .quiz {
+        color: white !important;
+        padding-top: -94px;
+        padding-bottom: 50px;
+
+    }
+    .quiz input{
+        margin-top: 10px !important;
+    }
+
+    input::placeholder {
+        font-size: 12px !important;
+    }
+    .header-text{
+        padding-top: 50px;
+    }
+    .quiz-header {
+        font-size: 13px;
+    }
+    /* Styling for all answers */
+    .red-text {
+        font-size: 13px;
+        width: 200px;
+        background: white;
+        color: darkred;
+        border: 2px solid darkred;
+        margin-top: 5px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    /* Styling for the selected answer */
+    .selected-answer {
+        background: darkred;
+        color: white;
+    }
+    .btn-default {
+        width: 120px;
+        background: white;
+        color: black;
+        font-size: 12px;
+
+    }
+    .btn-default:hover {
+        width: 120px;
+        background: darkgreen;
+        color: red;
+    }
+    .c-name {
+        margin-top: 120px;
+        margin-left: 136px;
+        color: white;
+
+    }
+    .mobile {
+        display: block;
+    }
+    .desktop {
+        display: none;
+    }
+}

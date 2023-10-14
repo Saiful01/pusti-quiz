@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 5 Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <head>
+        <!-- Other meta tags -->
+        <meta property="og:title" content="পুষ্টি হোম শেফ ">
+        <meta property="og:description" content="পুষ্টি হোম শেফ">
+        <meta property="og:image" content="/img/Artboard 8.png">
+        <meta property="og:url" content="https://masterclass.pustihomechef.com/">
+    </head>
+
+
+    <script>
+        var app = angular.module('myApp', []);
+        console.log("app created")
+    </script>
+
+    <link href="/style.css" rel="stylesheet">
+
+    <script src="/custom_angular.js"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="quizController" ng-init="questions()">
+
+<div class="container-fluid desktop-background">
+    <div class="row">
+        <!-- Content for desktop -->
+    </div>
+</div>
+<div class="container-fluid mobile-background">
+    <div class="row">
+        <!-- Content for mobile -->
+    </div>
+</div>
+<div class="container-fluid desktop-background1">
+    <div class="row">
+        <!-- Content for desktop -->
+    </div>
+</div>
+<div class="container-fluid mobile-background1">
+    <div class="row">
+        <!-- Content for mobile -->
+    </div>
+</div>
+<form>
+    <div class="container-fluid"
+         style="background: url('../img/Artboard 4.png') center; background-repeat: no-repeat; height: 406px">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <h5 class="text-danger fw-bold mt-5 text-center">হ্যান্ডস অন কোর্সটি দেখতে নিচের তথ্যগুলো দিয়ে সহায়তা
+                    করুন </h5>
+
+                <div class="row">
+                    <div class="col-md-6 col-6 mt-5">
+                        <input type="text" class="form-control" name="name" ng-model="name" placeholder="আপনার নাম"
+                               required>
+                    </div>
+                    <div class="col-md-6 col-6 mt-5">
+                        <input type="text" class="form-control" name="phone" ng-model="phone" placeholder="ফোন নাম্বার "
+                               required>
+                    </div>
+                    <div class="col-md-6 col-6 mt-3">
+                        <input type="email" class="form-control" name="email" ng-model="email" placeholder="ই-মেইল "
+                               required>
+                    </div>
+                    <div class="col-md-6 col-6 mt-3">
+                        <input type="text" class="form-control" name="gender" ng-model="gender" placeholder="জেন্ডার "
+                               required>
+                    </div>
+                    <div class="col-md-2 col-4 mx-auto mt-5">
+                        <a class="btn btn-danger "> <span class="p-3" ng-click="sendNext()">পরবর্তী</span> </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="container-fluid quiz"
+         style="background: url('../img/Artboard 3.png') center; background-repeat: no-repeat; " id="quiz">
+
+        <h5 class="fw-bold text-center header-text">হ্যান্ডস অন কোর্সটি দেখতে নিচের তথ্যগুলো দিয়ে সহায়তা করুন </h5>
+
+        <div class="row" id="quiz-design">
+
+            <div ng-repeat="question in questions">
+                <div class="col-md-6 col-6 mx-auto mt-3" style="text-align: center">
+                    <label class="text-center quiz-header">@{{ question.question }}</label><br>
+
+                    <!-- Input field to display the selected answer -->
+                    <input type="hidden" class="form-control red-text" ng-model="question.selectedAnswer" placeholder="Choose an answer">
+
+                    <div ng-repeat="answer in question.answers">
+                        <label
+                            ng-click="selectAnswer(question, answer)"
+                            ng-class="{
+          'selected-answer': question.selectedAnswer === answer,
+          'correct-answer': question.correctAnswer === answer && question.selectedAnswer === answer,
+          'incorrect-answer': question.selectedAnswer === answer && question.selectedAnswer !== question.correctAnswer,
+        }"
+                            class="red-text"
+                        >
+                            @{{ answer }}
+                        </label>
+                    </div>
+
+                    <!-- Display a message based on the last selected answer -->
+                   {{-- <div class="answer-message">
+                        <span ng-if="lastSelectedAnswer === question.correctAnswer && lastSelectedAnswer !== ''">Your answer is correct.</span>
+                        <span ng-if="lastSelectedAnswer !== question.correctAnswer && lastSelectedAnswer !== ''">Your answer is incorrect.</span>
+                    </div>--}}
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col-md-2 col-4 mx-auto mt-5">
+                <a class="btn btn-default" ng-click="answerSave()">সাবমিট করুন</a>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    </div>
+</form>
+<div class="container-fluid desktop-background2">
+    <div class="row">
+        <!-- Content for desktop -->
+    </div>
+</div>
+<div class="container-fluid mobile-background2">
+    <div class="row">
+        <!-- Content for mobile -->
+    </div>
+</div>
+
+
+</body>
+</html>
