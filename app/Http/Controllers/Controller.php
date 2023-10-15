@@ -17,33 +17,64 @@ class Controller extends BaseController
 
     public function home()
     {
-        return view('frontend.index');
+        $applicant= null;
+        $applicantIds = request()->session()->get('applicant_id');
+        if ($applicantIds){
+            $firstApplicantId = $applicantIds[0];
+            $applicant= Applicant::find($firstApplicantId);
+        }
+
+
+
+        $pageTitle="পুষ্টি হোম শেফ";
+        $pageDescription="পুষ্টি হোম শেফ";
+        $pageUrl="https://masterclass.pustihomechef.com/";
+        if (!$applicant){
+            $imageUrl="/img/Artboard 8.png";
+        }else{
+            $imageUrl= $applicant->file;
+        }
+
+
+        return view('frontend.index',
+            compact('pageTitle','pageDescription','pageUrl','imageUrl'));
 
     }
     public function certificate()
     {
         $applicantIds = request()->session()->get('applicant_id');
+        if (!$applicantIds){
+            return redirect()->route('home');
+        }
         $firstApplicantId = $applicantIds[0];
 
 
 
-         $applicant= Applicant::find($firstApplicantId);
+
+        $applicant= Applicant::find($firstApplicantId);
 
         $shareComponent = \Share::page(
-            'https://masterclass.pustihomechef.com/',
-            "Pusti Home Shafe",
+            'https://masterclass.pustihomechef.com/certificate',
+            "পুষ্টি হোম শেফ",
         )->facebook([
             'title' => "পুষ্টি হোম শেফ ",
             'description' => "পুষ্টি হোম শেফ ",
             'image' => $applicant->file
         ]);
-          /*  ->twitter()
-            ->linkedin()
-            ->telegram()
-            ->whatsapp()
-            ->reddit();*/
+        /*  ->twitter()
+          ->linkedin()
+          ->telegram()
+          ->whatsapp()
+          ->reddit();*/
 
-        return view('frontend.certificate',compact('applicant','shareComponent'));
+
+        $pageTitle="পুষ্টি হোম শেফ";
+        $pageDescription="পুষ্টি হোম শেফ";
+        $pageUrl="https://masterclass.pustihomechef.com/";
+        $imageUrl= $applicant->file;
+        Session::forget('applicant_id');
+
+        return view('frontend.certificate',compact('applicant','shareComponent','pageTitle','pageDescription','pageUrl','imageUrl'));
 
     }
     public function quizSave(Request $request)

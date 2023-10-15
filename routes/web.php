@@ -3,6 +3,7 @@
 /*Route::redirect('/', '/login');*/
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Artisan;
 
 Route::get('/', [Controller::class, 'home'])->name('home');
 Route::get('/certificate', [Controller::class, 'certificate'])->name('certificate');
@@ -45,4 +46,14 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 
         Route::post('profile', 'ChangePasswordController@updateProfile')->name('password.updateProfile');
         Route::post('profile/destroy', 'ChangePasswordController@destroy')->name('password.destroyProfile');
     }
+});
+
+Route::get('/clear-cache', function () {
+    Artisan::call('optimize');
+    Artisan::call('cache:clear');
+    Artisan::call('route:clear');
+    Artisan::call('config:clear');
+    Artisan::call('view:clear');
+
+    return "Cache cleared successfully";
 });

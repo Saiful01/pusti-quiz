@@ -81,6 +81,7 @@ app.controller('quizController', function ($scope, $http, $location) {
                 });
                 document.getElementById("quiz").style.display = "none";
 
+
                 messageSuccess(response.data.message)
                 window.location.href = "/certificate";
 
@@ -121,6 +122,7 @@ app.controller('quizController', function ($scope, $http, $location) {
           return;
       }
       document.getElementById("quiz").style.display = "block";
+        document.getElementById("intro").style.display = "none";
       messageSuccess('নিম্নলিখিত প্রশ্নগুলির উত্তর সিলেক্ট করুন ')
 
 
