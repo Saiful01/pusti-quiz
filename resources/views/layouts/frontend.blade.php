@@ -11,7 +11,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
-    <link rel="canonical" href="https://masterclass.pustihomechef.com/certificate" />
+
+    <meta http-equiv="cache-control" content="max-age=0, no-cache, no-store, must-revalidate">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+
+
+    <meta property="og:image" content="@yield('image')"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="628"/>
+    <meta property="og:title" content="@yield('title')">
+    <meta property="og:description"
+          content="@yield('description')">
 
 
     <script>

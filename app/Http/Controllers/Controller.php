@@ -17,23 +17,12 @@ class Controller extends BaseController
 
     public function home()
     {
-
-    /*    $applicant= Session::get('applicant');
-
-        $pageTitle="পুষ্টি হোম শেফ";
-        $pageDescription="পুষ্টি হোম শেফ";
+        $title="পুষ্টি হোম শেফ";
+        $description="পুষ্টি হোম শেফ";
         $pageUrl="https://masterclass.pustihomechef.com/";
-        if ($applicant){
-            $imageUrl= $applicant[0]->file;
+        $image="/img/Artboard 8.png";
 
-        }else{
-            $imageUrl="/img/Artboard 8.png";
-        }*/
-
-
-
-        return view('frontend.index',
-            /*compact('pageTitle','pageDescription','pageUrl','imageUrl')*/);
+        return view('frontend.index', compact('title','description','pageUrl','image'));
 
     }
     public function certificate()
@@ -45,29 +34,18 @@ class Controller extends BaseController
         $firstApplicantId = $applicantIds[0];
 
        $applicant= Applicant::find($firstApplicantId);
-
-        Session::push('applicant',$applicant);
-
-
-
-        $shareComponent = \Share::page(
+       $shareComponent = \Share::page(
             'https://masterclass.pustihomechef.com/certificate',
             "পুষ্টি হোম শেফ",
         )->facebook();
-        /*  ->twitter()
-          ->linkedin()
-          ->telegram()
-          ->whatsapp()
-          ->reddit();*/
 
-
-        $pageTitle="পুষ্টি হোম শেফ";
-        $pageDescription="পুষ্টি হোম শেফ";
+        $title="পুষ্টি হোম শেফ";
+        $description="পুষ্টি হোম শেফ";
         $pageUrl="https://masterclass.pustihomechef.com/certificate";
-         $imageUrl= "https://masterclass.pustihomechef.com/".$applicant->file;
+         $image= "https://masterclass.pustihomechef.com/".$applicant->file;
         Session::forget('applicant_id');
 
-        return view('frontend.certificate',compact('applicant','shareComponent','pageTitle','pageDescription','pageUrl','imageUrl'));
+        return view('frontend.certificate',compact('applicant','shareComponent','title','description','pageUrl','image'));
 
     }
     public function quizSave(Request $request)

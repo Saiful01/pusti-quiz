@@ -1,5 +1,7 @@
 @extends("layouts.frontend")
-@section('title', 'Challenge.gov.bd')
+@section('title', $title)
+@section('description', $description)
+@section('image', $image)
 @section("content")
 
     <div class="container-fluid desktop-background1">

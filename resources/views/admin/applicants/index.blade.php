@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-@can('applicant_create')
+{{--@can('applicant_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.applicants.create') }}">
@@ -8,7 +8,7 @@
             </a>
         </div>
     </div>
-@endcan
+@endcan--}}
 <div class="card">
     <div class="card-header">
         {{ trans('cruds.applicant.title_singular') }} {{ trans('global.list') }}
@@ -37,9 +37,7 @@
                         <th>
                             {{ trans('cruds.applicant.fields.gender') }}
                         </th>
-                        <th>
-                            {{ trans('cruds.applicant.fields.ans_3') }}
-                        </th>
+
                         <th>
                             &nbsp;
                         </th>
@@ -66,9 +64,7 @@
                             <td>
                                 {{ $applicant->gender ?? '' }}
                             </td>
-                            <td>
-                                {{ $applicant->ans_3 ?? '' }}
-                            </td>
+
                             <td>
                                 @can('applicant_show')
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.applicants.show', $applicant->id) }}">
@@ -148,7 +144,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 })
 
 </script>

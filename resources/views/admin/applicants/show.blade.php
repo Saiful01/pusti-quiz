@@ -87,7 +87,7 @@
                             {{ $applicant->ans_4 }}
                         </td>
                     </tr>
-                    <tr>
+                {{--    <tr>
                         <th>
                             {{ trans('cruds.applicant.fields.certificate') }}
                         </th>
@@ -98,7 +98,7 @@
                                 </a>
                             @endif
                         </td>
-                    </tr>
+                    </tr>--}}
                 </tbody>
             </table>
             <div class="form-group">
