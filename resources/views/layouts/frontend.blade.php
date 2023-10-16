@@ -11,17 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
-
-        <meta property="og:title" content="{{ $pageTitle }}">
-        <meta property="og:description" content="{{ $pageDescription }}">
-        <meta property="og:url" content="{{ $pageUrl }}">
-        <meta property="og:image" content="{{ $imageUrl }}">
-        <!-- Other meta tags -->
-        {{--      <meta property="og:title" content="পুষ্টি হোম শেফ ">
-              <meta property="og:description" content="পুষ্টি হোম শেফ">
-              <meta property="og:image" content="/img/Artboard 8.png">
-              <meta property="og:url" content="https://masterclass.pustihomechef.com/">--}}
-
+    <link rel="canonical" href="https://masterclass.pustihomechef.com/certificate" />
 
 
     <script>

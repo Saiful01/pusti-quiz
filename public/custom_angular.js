@@ -125,11 +125,7 @@ app.controller('quizController', function ($scope, $http, $location) {
         document.getElementById("intro").style.display = "none";
       messageSuccess('নিম্নলিখিত প্রশ্নগুলির উত্তর সিলেক্ট করুন ')
 
-
-
-
-
- }
+}
 
     $scope.questions = [
         {
@@ -216,6 +212,7 @@ app.controller('quizController', function ($scope, $http, $location) {
             title: message,
             showConfirmButton: true,
             timer: 3000,
+            customClass: "Custom_Cancel",
 
         })
 

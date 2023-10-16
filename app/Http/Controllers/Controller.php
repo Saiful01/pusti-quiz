@@ -17,27 +17,23 @@ class Controller extends BaseController
 
     public function home()
     {
-        $applicant= null;
-        $applicantIds = request()->session()->get('applicant_id');
-        if ($applicantIds){
-            $firstApplicantId = $applicantIds[0];
-            $applicant= Applicant::find($firstApplicantId);
-        }
 
-
+    /*    $applicant= Session::get('applicant');
 
         $pageTitle="পুষ্টি হোম শেফ";
         $pageDescription="পুষ্টি হোম শেফ";
         $pageUrl="https://masterclass.pustihomechef.com/";
-        if (!$applicant){
-            $imageUrl="/img/Artboard 8.png";
+        if ($applicant){
+            $imageUrl= $applicant[0]->file;
+
         }else{
-            $imageUrl= $applicant->file;
-        }
+            $imageUrl="/img/Artboard 8.png";
+        }*/
+
 
 
         return view('frontend.index',
-            compact('pageTitle','pageDescription','pageUrl','imageUrl'));
+            /*compact('pageTitle','pageDescription','pageUrl','imageUrl')*/);
 
     }
     public function certificate()
@@ -48,19 +44,16 @@ class Controller extends BaseController
         }
         $firstApplicantId = $applicantIds[0];
 
+       $applicant= Applicant::find($firstApplicantId);
+
+        Session::push('applicant',$applicant);
 
 
-
-        $applicant= Applicant::find($firstApplicantId);
 
         $shareComponent = \Share::page(
             'https://masterclass.pustihomechef.com/certificate',
             "পুষ্টি হোম শেফ",
-        )->facebook([
-            'title' => "পুষ্টি হোম শেফ ",
-            'description' => "পুষ্টি হোম শেফ ",
-            'image' => $applicant->file
-        ]);
+        )->facebook();
         /*  ->twitter()
           ->linkedin()
           ->telegram()
@@ -70,8 +63,8 @@ class Controller extends BaseController
 
         $pageTitle="পুষ্টি হোম শেফ";
         $pageDescription="পুষ্টি হোম শেফ";
-        $pageUrl="https://masterclass.pustihomechef.com/";
-        $imageUrl= $applicant->file;
+        $pageUrl="https://masterclass.pustihomechef.com/certificate";
+         $imageUrl= "https://masterclass.pustihomechef.com/".$applicant->file;
         Session::forget('applicant_id');
 
         return view('frontend.certificate',compact('applicant','shareComponent','pageTitle','pageDescription','pageUrl','imageUrl'));
@@ -98,7 +91,7 @@ class Controller extends BaseController
             // Save the certificate image with a dynamic name
             $imageName = $request['name'] . '_certificate.jpg';
             $template->save(public_path('certificates/' . $imageName));
-            $request['file']= '/certificates/' . $imageName;
+            $request['file']= 'certificates/' . $imageName;
 
             $applicant = Applicant::create($request->all());
 
