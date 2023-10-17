@@ -16,7 +16,7 @@
     </div>
     <form>
         <div class="container-fluid"
-             style="background: url('../img/Artboard 4.png') center; background-repeat: no-repeat; height: 406px" id="intro">
+             style="background: url('../img/form-bg.png') center; background-repeat: no-repeat; height: 406px" id="intro">
             <div class="row">
                 <div class="col-md-6 mx-auto">
                     <h5 class="text-danger fw-bold mt-5 text-center">হ্যান্ডস অন কোর্সটি দেখতে নিচের তথ্যগুলো দিয়ে সহায়তা
@@ -36,7 +36,7 @@
                                    required>
                         </div>
                         <div class="col-md-6 col-6 mt-3">
-                            <input type="text" class="form-control" name="gender" ng-model="gender" placeholder="জেন্ডার "
+                            <input type="text" class="form-control" name="gender" ng-model="gender" placeholder="ঠিকানা"
                                    required>
                         </div>
                         <div class="col-md-2 col-4 mx-auto mt-5">
@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="container-fluid quiz"
-             style="background: url('../img/Artboard 3.png') center; background-repeat: no-repeat; " id="quiz">
+             style="background: url('../img/quiz-bg.png') center; background-repeat: no-repeat; " id="quiz">
 
             <h5 class="fw-bold text-center header-text">হ্যান্ডস অন কোর্সটি দেখতে নিচের তথ্যগুলো দিয়ে সহায়তা করুন </h5>
 

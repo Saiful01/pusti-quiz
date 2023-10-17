@@ -28,33 +28,33 @@ div#social-links ul li {
 }
 div#social-links ul li a {
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #ffffff;
     margin: 1px;
     font-size: 30px;
-    color: #222;
-    background-color: #ccc;
+    color: #0866FF;
+    background-color: #ffffff;
 }
 
 /* Styles for desktop screens (e.g., screens wider than 768px) */
 @media (min-width: 769px) {
     .desktop-background {
-        background: url('../img/1st.png') center;
+        background: url('../img/header.png') center;
         height: 166px;
     }
     .desktop-background1 {
-        background: url('../img/Artboard 8.png') center;
-        height: 700px;
+        background: url('../img/landing-page.png') center;
+        height: 1200px;
         margin-top: -10px;
     }
     .desktop-background2 {
-        background: url('../img/Artboard 9.png') center;
-        height: 326px;
-        margin-top: -50px;
+        background: url('../img/rules.png') center;
+        height: 577px;
+
 
 
     }
     .desktop-background3 {
-        background: url('../img/certificate/Artboard 11.png') center;
+        background: url('../img/certificate/quiz-bg.png') center;
         background-size: cover;
         height: 900px;
 
@@ -123,25 +123,25 @@ div#social-links ul li a {
 /* Styles for mobile screens (e.g., screens 768px or narrower) */
 @media (max-width: 768px) {
     .mobile-background {
-        background: url('../img/1st.png') center;
+        background: url('../img/header.png') center;
         background-size: cover;
         height:120px;
     }
     .mobile-background1 {
-        background: url('../img/Artboard 8.png') center;
+        background: url('../img/landing-page.png') center;
         background-size: cover;
-        height:450px;
+        height:581px;
         margin-top: -5px;
     }
     .mobile-background2 {
-        background: url('../img/Artboard 9.png') center;
+        background: url('../img/rules.png') center;
         background-size: cover;
         height: 200px;
         margin-top: 0px;
 
     }
     .mobile-background3 {
-        background: url('../img/certificate/Artboard 11.png') center;
+        background: url('../img/certificate/quiz-bg.png') center;
         background-size: cover;
         height: 230px;
         margin-top: 0px;

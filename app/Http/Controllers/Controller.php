@@ -21,7 +21,7 @@ class Controller extends BaseController
         $title="পুষ্টি হোম শেফ";
         $description="পুষ্টি হোম শেফ";
         $pageUrl="https://masterclass.pustihomechef.com/";
-        $image="/img/Artboard 8.png";
+        $image="/img/landing-page.png";
 
         return view('frontend.index', compact('title','description','pageUrl','image'));
 
@@ -35,24 +35,27 @@ class Controller extends BaseController
         $firstApplicantId = $applicantIds[0];
 
        $applicant= Applicant::find($firstApplicantId);
-       $shareComponent = \Share::page(
-            'https://masterclass.pustihomechef.com/certificate',
+        $shareComponent = \Share::page(
+            "https://masterclass.pustihomechef.com/".$applicant->file,
             "পুষ্টি হোম শেফ",
-        )->facebook();
-
+        )->facebook([
+            'title' => "পুষ্টি হোম শেফ ",
+            'description' => "পুষ্টি হোম শেফ ",
+            'image' => $applicant->file
+        ]);
+        /*  ->twitter()
+          ->linkedin()
+          ->telegram()
+          ->whatsapp()
+          ->reddit();*/
 
 
         $title="পুষ্টি হোম শেফ";
         $description="পুষ্টি হোম শেফ";
-        $pageUrl="https://masterclass.pustihomechef.com/certificate";
+        $pageUrl="https://masterclass.pustihomechef.com/".$applicant->file;
          $image= "https://masterclass.pustihomechef.com/".$applicant->file;
 
-        View::share('ogImage', $image);
-        View::share('ogTitle', $title);
-        View::share('ogDescription', $description);
-        View::share('ogUrl', $pageUrl);
-
-        Session::forget('applicant_id');
+         Session::forget('applicant_id');
 
         return view('frontend.certificate',compact('applicant','shareComponent','title','description','pageUrl','image'));
 
@@ -68,7 +71,7 @@ class Controller extends BaseController
             $template = Image::make(public_path('certificate.png'));
 
             // Add the applicant's name to the certificate
-            $template->text($request['name'], 450, 400, function ($font) {
+            $template->text($request['name'], 430, 395, function ($font) {
                 $font->file(public_path('/font/HindSiliguri-Bold.ttf'));
                 $font->size(50);
                 $font->color('#fffff');
@@ -76,7 +79,7 @@ class Controller extends BaseController
 
 
             // Save the certificate image with a dynamic name
-            $imageName = $request['name'] . '_certificate.jpg';
+            $imageName = time() . '.' .'_certificate.jpg';
             $template->save(public_path('certificates/' . $imageName));
             $request['file']= 'certificates/' . $imageName;
 
