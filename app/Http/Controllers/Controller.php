@@ -8,6 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\View;
 use Intervention\Image\Facades\Image;
 use Jorenvh\Share\Share;
 
@@ -39,10 +40,18 @@ class Controller extends BaseController
             "পুষ্টি হোম শেফ",
         )->facebook();
 
+
+
         $title="পুষ্টি হোম শেফ";
         $description="পুষ্টি হোম শেফ";
         $pageUrl="https://masterclass.pustihomechef.com/certificate";
          $image= "https://masterclass.pustihomechef.com/".$applicant->file;
+
+        View::share('ogImage', $image);
+        View::share('ogTitle', $title);
+        View::share('ogDescription', $description);
+        View::share('ogUrl', $pageUrl);
+
         Session::forget('applicant_id');
 
         return view('frontend.certificate',compact('applicant','shareComponent','title','description','pageUrl','image'));
