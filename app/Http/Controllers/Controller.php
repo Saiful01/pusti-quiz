@@ -18,25 +18,37 @@ class Controller extends BaseController
 
     public function home()
     {
-        $title="পুষ্টি হোম শেফ";
-        $description="পুষ্টি হোম শেফ";
-        $pageUrl="https://masterclass.pustihomechef.com/";
-        $image="/img/landing-page.png";
+        $title = "পুষ্টি হোম শেফ";
+        $description = "পুষ্টি হোম শেফ";
+        $pageUrl = "https://masterclass.pustihomechef.com/";
+        $image = "/img/landing-page.png";
 
-        return view('frontend.index', compact('title','description','pageUrl','image'));
+        return view('frontend.index', compact('title', 'description', 'pageUrl', 'image'));
 
     }
+
+    public function urlRedirect($value)
+    {
+
+        $image= '/certificates/'.$value.'_certificate.png';
+
+        return \view('welcome',compact('image'));
+       // return redirect()->route('home');
+    }
+
     public function certificate()
     {
         $applicantIds = request()->session()->get('applicant_id');
-        if (!$applicantIds){
+        if (!$applicantIds) {
             return redirect()->route('home');
         }
         $firstApplicantId = $applicantIds[0];
 
-       $applicant= Applicant::find($firstApplicantId);
+        $applicant = Applicant::find($firstApplicantId);
+        $updatedFilename = str_replace("_certificate.png", "", $applicant->file);
+
         $shareComponent = \Share::page(
-            "https://masterclass.pustihomechef.com/".$applicant->file,
+            "https://masterclass.pustihomechef.com/" . $updatedFilename,
             "পুষ্টি হোম শেফ",
         )->facebook([
             'title' => "পুষ্টি হোম শেফ ",
@@ -50,16 +62,17 @@ class Controller extends BaseController
           ->reddit();*/
 
 
-        $title="পুষ্টি হোম শেফ";
-        $description="পুষ্টি হোম শেফ";
-        $pageUrl="https://masterclass.pustihomechef.com/".$applicant->file;
-         $image= "https://masterclass.pustihomechef.com/".$applicant->file;
+        $title = "পুষ্টি হোম শেফ";
+        $description = "পুষ্টি হোম শেফ";
+        $pageUrl = "https://masterclass.pustihomechef.com/" . $applicant->file;
+        $image = "https://masterclass.pustihomechef.com/" . $applicant->file;
 
-         Session::forget('applicant_id');
+        Session::forget('applicant_id');
 
-        return view('frontend.certificate',compact('applicant','shareComponent','title','description','pageUrl','image'));
+        return view('frontend.certificate', compact('applicant', 'shareComponent', 'title', 'description', 'pageUrl', 'image'));
 
     }
+
     public function quizSave(Request $request)
     {
         //return $request->all();
@@ -79,9 +92,9 @@ class Controller extends BaseController
 
 
             // Save the certificate image with a dynamic name
-            $imageName = time() . '.' .'_certificate.jpg';
+            $imageName = time(). '_certificate.png';
             $template->save(public_path('certificates/' . $imageName));
-            $request['file']= 'certificates/' . $imageName;
+            $request['file'] = 'certificates/' . $imageName;
 
             $applicant = Applicant::create($request->all());
 

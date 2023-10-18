@@ -4,12 +4,13 @@
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Artisan;
-Route::group(['middleware' => 'frontend'], function () {
+
 
 Route::get('/', [Controller::class, 'home'])->name('home');
 Route::get('/certificate', [Controller::class, 'certificate'])->name('certificate');
+Route::get('/certificates/{value}', [Controller::class, 'urlRedirect'])->name('redirect.home');
 
-});
+
 
 Route::post('/quiz-save', [Controller::class, 'quizSave'])->name('quiz.save');
 Route::get('/home', function () {
