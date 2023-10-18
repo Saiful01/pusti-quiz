@@ -37,7 +37,7 @@
 </head>
 <body ng-app="myApp" ng-controller="quizController" ng-init="questions()">
 
-<div class="container-fluid desktop-background">
+{{--<div class="container-fluid desktop-background">
     <div class="row">
         <!-- Content for desktop -->
     </div>
@@ -46,7 +46,7 @@
     <div class="row">
         <!-- Content for mobile -->
     </div>
-</div>
+</div>--}}
 @yield('content')
 
 </body>

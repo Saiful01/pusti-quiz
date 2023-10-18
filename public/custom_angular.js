@@ -7,7 +7,9 @@ app.controller('quizController', function ($scope, $http, $location) {
 
     $scope.selectAnswer = function (question, answer) {
         question.selectedAnswer = answer;
+        console.log(question.selectedAnswer+' answer')
         $scope.lastSelectedAnswer = answer; // Update the last selected answer
+        console.log($scope.lastSelectedAnswer+' latest')
     };
 
 

@@ -18,7 +18,7 @@
                 <div class="col-md-6 col-12  mt-2">
                     <div class="text-center ">
                         <h6 class="text-danger mb-3">সার্টিফিকেট শেয়ার করেন </h6>
-                        {!! $shareComponent !!}
+                      <span class="mt-2">{!! $shareComponent !!}</span>
                     </div>
 
                 </div>

@@ -1,20 +1,39 @@
-@import url('/font/HindSiliguri-Bold.ttf');
-
-body{
-
-    font-family: 'Hind Siliguri', sans-serif !important;
+@font-face {
+    font-family: 'Hind Siliguri';
+    src: url('/font/HindSiliguri-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
 }
+body {
+    font-family: 'Hind Siliguri', sans-serif !important;
+    font-weight: bold;
+}
+
 
 #quiz input {
     width: 400px;
 }
 
-
-/* Styling for the selected answer */
 .selected-answer {
     background: darkred;
     color: white;
 }
+
+
+
+.answer-icon {
+    font-size: 18px;
+    margin-left: 5px;
+}
+.correct-icon::before {
+    content: '\2713'; /* Checkmark icon */
+    color: darkred;
+}
+.incorrect-icon::before {
+    content: '\2717'; /* Cross icon */
+    color: red;
+}
+
 .Custom_Cancel {
     font-size: 10px;
 }
@@ -27,9 +46,8 @@ div#social-links ul li {
     display: inline-block;
 }
 div#social-links ul li a {
-    padding: 20px;
+    padding: 12px;
     border: 1px solid #ffffff;
-    margin: 1px;
     font-size: 30px;
     color: #0866FF;
     background-color: #ffffff;
@@ -42,9 +60,9 @@ div#social-links ul li a {
         height: 166px;
     }
     .desktop-background1 {
-        background: url('../img/landing-page.png') center;
-        height: 1200px;
-        margin-top: -10px;
+        background: url('../img/landing-page.jpg') center;
+        height: 1400px;
+
     }
     .desktop-background2 {
         background: url('../img/rules.png') center;
@@ -90,11 +108,15 @@ div#social-links ul li a {
         border-radius: 10px;
         text-align: center;
     }
-    /* Styling for the selected answer */
     .selected-answer {
         background: darkred;
         color: white;
     }
+    .correct-answer {
+        background: #188351;
+        color: white;
+    }
+
     .btn-default {
         width: 150px;
         background: white;
@@ -103,7 +125,7 @@ div#social-links ul li a {
     }
     .btn-default:hover {
         width: 150px;
-        background: darkgreen;
+        background: #188351;
         color: red;
     }
     .c-name {
@@ -128,15 +150,15 @@ div#social-links ul li a {
         height:120px;
     }
     .mobile-background1 {
-        background: url('../img/landing-page.png') center;
+        background: url('../img/landing-page.jpg') center;
         background-size: cover;
-        height:581px;
-        margin-top: -5px;
+        height:800px;
+
     }
     .mobile-background2 {
         background: url('../img/rules.png') center;
         background-size: cover;
-        height: 200px;
+        height: 300px;
         margin-top: 0px;
 
     }
@@ -168,20 +190,25 @@ div#social-links ul li a {
     }
     /* Styling for all answers */
     .red-text {
+        margin-left: -45px;
         font-size: 13px;
-        width: 200px;
+        width: 290px;
         background: white;
         color: darkred;
         border: 2px solid darkred;
         margin-top: 5px;
         border-radius: 10px;
-        text-align: center;
+        text-align: -webkit-center;
     }
-    /* Styling for the selected answer */
     .selected-answer {
         background: darkred;
         color: white;
     }
+    .correct-answer {
+        background: #188351;
+        color: white;
+    }
+
     .btn-default {
         width: 120px;
         background: white;
@@ -191,7 +218,7 @@ div#social-links ul li a {
     }
     .btn-default:hover {
         width: 120px;
-        background: darkgreen;
+        background: #188351;
         color: red;
     }
     .c-name {
