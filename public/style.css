@@ -9,6 +9,10 @@ body {
     font-weight: bold;
 }
 
+.icon-opacity {
+    opacity: 0.5;
+}
+
 
 #quiz input {
     width: 400px;
@@ -38,19 +42,21 @@ body {
     font-size: 10px;
 }
 
-div#social-links {
-    margin: 0 auto;
-    max-width: 500px;
-}
+
 div#social-links ul li {
+    margin-top: 5px;
+    height: 40px;
+    width: 50px;
+    background: white;
     display: inline-block;
 }
 div#social-links ul li a {
-    padding: 12px;
-    border: 1px solid #ffffff;
+
     font-size: 30px;
     color: #0866FF;
-    background-color: #ffffff;
+
+
+
 }
 
 /* Styles for desktop screens (e.g., screens wider than 768px) */
@@ -61,7 +67,7 @@ div#social-links ul li a {
     }
     .desktop-background1 {
         background: url('../img/landing-page.jpg') center;
-        height: 1400px;
+        height: 1377px;
 
     }
     .desktop-background2 {
@@ -76,6 +82,13 @@ div#social-links ul li a {
         background-size: cover;
         height: 900px;
 
+
+    }
+    .desktop-background-c {
+        background: url('../img/certificate-bg.jpg') center;
+        background-size: cover;
+        height: 720px;
+        margin-top: 0px;
 
     }
     .quiz {
@@ -123,16 +136,40 @@ div#social-links ul li a {
         color: black;
         font-size: 14px;
     }
+    .btn-default1 {
+        width: 150px;
+        background: white;
+        color: red;
+        font-size: 14px;
+    }
     .btn-default:hover {
         width: 150px;
         background: #188351;
-        color: red;
+        color: white;
+    }
+    .btn-default1:hover {
+        width: 150px;
+        background: #188351;
+        color: white;
     }
     .c-name {
         margin-top: 500px;
         margin-left: 500px;
         color: white;
 
+    }
+    div#social-links {
+        margin: -23px 36px;
+        max-width: 1px;
+        color: white;
+    }
+    .btn-img {
+        margin-top: 1225px;
+
+    }
+    .icon {
+        position: absolute;
+        margin-top: -104px;
     }
     .mobile {
         display: none;
@@ -166,6 +203,13 @@ div#social-links ul li a {
         background: url('../img/certificate/quiz-bg.png') center;
         background-size: cover;
         height: 230px;
+        margin-top: 0px;
+
+    }
+    .mobile-background-c {
+        background: url('../img/certificate-bg.jpg') center;
+        background-size: cover;
+        height: 400px;
         margin-top: 0px;
 
     }
@@ -216,16 +260,43 @@ div#social-links ul li a {
         font-size: 12px;
 
     }
+    .btn-default1 {
+        width: 120px;
+        background: white;
+        color: red;
+        font-size: 14px;
+    }
     .btn-default:hover {
         width: 120px;
         background: #188351;
-        color: red;
+        color: white;
+    }
+    .btn-default1:hover {
+        width: 120px;
+        background: #188351;
+        color: white;
     }
     .c-name {
         margin-top: 120px;
         margin-left: 136px;
         color: white;
 
+    }
+    div#social-links {
+        margin: 0px 5px;
+        max-width: 1px;
+        color: white;
+    }
+    .btn-img {
+        margin-top: 650px;
+        height: 100px;
+
+    }
+    .icon {
+        margin-left: 2px;
+        position: absolute;
+        margin-top: -82px;
+        width: 70px;
     }
     .mobile {
         display: block;

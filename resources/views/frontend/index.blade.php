@@ -4,14 +4,58 @@
 @section('image', $image)
 @section("content")
 
-    <div class="container-fluid desktop-background1">
-        <div class="row">
-            <!-- Content for desktop -->
+    <div class="container-fluid desktop-background1 desktop">
+        <div class="row" >
+            <img src="/img/button-bg.jpg" class="btn-img" >
+            <div class="col-md-6 mx-auto">
+                <div class="row">
+
+                        <div class="col-md-3">
+                            <a href="">
+                                <img src="/img/icon-1.png" class="icon">
+                            </a>
+
+                        </div>
+
+
+                    <div class="col-md-3 icon-opacity">
+                        <img src="/img/icon-2.png"class="icon" >
+                    </div>
+                    <div class="col-md-3 icon-opacity">
+                        <img src="/img/icon-3.png" class="icon">
+                    </div>
+                    <div class="col-md-3 icon-opacity">
+                        <img src="/img/icon-4.png"class="icon" >
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="container-fluid mobile-background1">
+    <div class="container-fluid mobile-background1 mobile">
         <div class="row">
-            <!-- Content for mobile -->
+            <img src="/img/button-bg.jpg" class="btn-img">
+            <div class="col-md-6 col-10 mx-auto">
+                <div class="row">
+
+                    <div class="col-md-3 col-3">
+                        <a href="">
+                            <img src="/img/icon-1.png" class="icon">
+                        </a>
+
+                    </div>
+
+
+                    <div class="col-md-3 col-3 icon-opacity">
+                        <img src="/img/icon-2.png"class="icon" >
+                    </div>
+                    <div class="col-md-3 col-3 icon-opacity">
+                        <img src="/img/icon-3.png" class="icon">
+                    </div>
+                    <div class="col-md-3 col-3 icon-opacity">
+                        <img src="/img/icon-4.png"class="icon" >
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <form>
@@ -20,9 +64,7 @@
              id="intro">
             <div class="row">
                 <div class="col-md-6 mx-auto">
-                    <h5 class="text-danger fw-bold mt-5 text-center">হ্যান্ডস অন কোর্সটি দেখতে নিচের তথ্যগুলো দিয়ে
-                        সহায়তা
-                        করুন </h5>
+                    <h3 class="text-danger fw-bold mt-5 text-center">হ্যান্ডস অন কোর্সের জন্য <br> নিচের তথ্যগুলো দিয়ে সহায়তা করুন </h3>
 
                     <div class="row">
                         <div class="col-md-6 col-6 mt-5">

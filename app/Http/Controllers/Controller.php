@@ -20,7 +20,7 @@ class Controller extends BaseController
     {
         $title = "পুষ্টি হোম শেফ";
         $description = "পুষ্টি হোম শেফ";
-        $pageUrl = "https://masterclass.pustihomechef.com/";
+        $pageUrl = "http://cookandconnect.pustihomechef.com/";
         $image = "/img/landing-page.png";
 
         return view('frontend.index', compact('title', 'description', 'pageUrl', 'image'));
@@ -48,7 +48,7 @@ class Controller extends BaseController
         $updatedFilename = str_replace("_certificate.png", "", $applicant->file);
 
         $shareComponent = \Share::page(
-            "https://masterclass.pustihomechef.com/" . $updatedFilename,
+            "http://cookandconnect.pustihomechef.com/" . $updatedFilename,
             "পুষ্টি হোম শেফ",
         )->facebook([
             'title' => "পুষ্টি হোম শেফ ",
@@ -64,8 +64,8 @@ class Controller extends BaseController
 
         $title = "পুষ্টি হোম শেফ";
         $description = "পুষ্টি হোম শেফ";
-        $pageUrl = "https://masterclass.pustihomechef.com/" . $applicant->file;
-        $image = "https://masterclass.pustihomechef.com/" . $applicant->file;
+        $pageUrl = "http://cookandconnect.pustihomechef.com/" . $applicant->file;
+        $image = "http://cookandconnect.pustihomechef.com/" . $applicant->file;
 
         Session::forget('applicant_id');
 
@@ -81,7 +81,7 @@ class Controller extends BaseController
         try {
 
             // Load the certificate template image
-            $template = Image::make(public_path('certificate.png'));
+            $template = Image::make(public_path('certificate.jpg'));
 
             // Add the applicant's name to the certificate
             $template->text($request['name'], 430, 395, function ($font) {

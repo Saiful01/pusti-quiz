@@ -49,7 +49,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.applicant.fields.gender') }}
+                            Address
                         </th>
                         <td>
                             {{ $applicant->gender }}

@@ -35,7 +35,7 @@
                             {{ trans('cruds.applicant.fields.email') }}
                         </th>
                         <th>
-                            {{ trans('cruds.applicant.fields.gender') }}
+                            Address
                         </th>
 
                         <th>
