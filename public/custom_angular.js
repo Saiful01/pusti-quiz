@@ -25,7 +25,7 @@ app.controller('quizController', function ($scope, $http, $location) {
                 // Add an error message for incorrect answers
                 var errorMessage = "প্রশ্ন " + (index + 1) + ": আপনার উত্তর ভুল.\n";
                 errorMessage += "   আপনার উত্তর: " + question.selectedAnswer + "\n";
-               /* errorMessage += "   Correct answer: " + question.correctAnswer + "\n";*/
+                /* errorMessage += "   Correct answer: " + question.correctAnswer + "\n";*/
                 incorrectAnswers.push(errorMessage);
             }
         });
@@ -107,27 +107,27 @@ app.controller('quizController', function ($scope, $http, $location) {
     $scope.sendNext = function () {
 
 
-  if (!$scope.name) {
+        if (!$scope.name) {
             messageError('আপনার নাম লিখুন ')
             return;
         }
-  if ($scope.phone == null || $scope.phone.toString().length < 10) {
+        if ($scope.phone == null || $scope.phone.toString().length < 10) {
             messageError('আপনার ফোন নাম্বার লিখুন ')
             return;
         }
-      if (!$scope.email) {
-          messageError('আপনার ই-মেইল  লিখুন ')
-          return;
-      }
-      if (!$scope.gender) {
-          messageError('আপনার ঠিকানা লিখুন')
-          return;
-      }
-      document.getElementById("quiz").style.display = "block";
+        if (!$scope.email) {
+            messageError('আপনার ই-মেইল  লিখুন ')
+            return;
+        }
+        if (!$scope.gender) {
+            messageError('আপনার ঠিকানা লিখুন')
+            return;
+        }
+        document.getElementById("quiz").style.display = "block";
         document.getElementById("intro").style.display = "none";
-      messageSuccess('নিম্নলিখিত প্রশ্নগুলির উত্তর সিলেক্ট করুন ')
+        messageSuccess('নিম্নলিখিত প্রশ্নগুলির উত্তর সিলেক্ট করুন ')
 
-}
+    }
 
     $scope.questions = [
         {
@@ -165,7 +165,7 @@ app.controller('quizController', function ($scope, $http, $location) {
             correctAnswer: "কম মসলা আর বেশি সস ব্যবহার হয়"
         },
         {
-            question: "গ্নিচের কোন উপাদানটি চাইনিজ রান্নার বহুল ব্যবহৃত উপাদান?",
+            question: "নিচের কোন উপাদানটি চাইনিজ রান্নার বহুল ব্যবহৃত উপাদান?",
             answers: [
                 "সয়া সস\n",
                 "চিলি সস\n",
